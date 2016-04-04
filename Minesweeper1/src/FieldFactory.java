@@ -12,7 +12,10 @@ public class FieldFactory {
 			{
 				field = FieldBuilder(input);
 				printField(field);
-				fieldCounter++;
+				if(field.field.length != 2)
+				{
+					fieldCounter++;
+				}
 			}while(input.hasNextLine());
 		}
 	}
@@ -21,7 +24,10 @@ public class FieldFactory {
 		int x,y;
 		x = in.nextInt()+2;
 		y = in.nextInt()+2;
-		in.nextLine();
+		if(in.hasNextLine())
+		{
+			in.nextLine();
+		}
 		Field ret = new Field(x,y);
 		if(x != 0)
 		{
